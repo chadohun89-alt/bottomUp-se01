@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>환자 진료기록 검색</title>
+    
+    <link rel="stylesheet" href="record.css">
+       
+    <script src="record.js"></script>
+
+</head>
+<body>
+
+    <div class="search-container">
+        <h3>🏥 환자 정보 조회</h3>
+        
+        <div class="input-group">
+            <label>이름</label>
+            <input type="text" id="userName" placeholder="이름">
+        </div>
+
+        <div class="input-group">
+            <label>연락처</label>
+            <input type="text" id="userPhone" placeholder="010-0000-0000">
+        </div>
+
+        <div class="input-group">
+            <label>주민번호</label>
+            <input type="password" id="userSsn" placeholder="000000-0000000">
+        </div>
+
+        <button onclick="searchPatient()">기록 검색하기</button>
+    </div>
+
+
+</body>
+</html>
