@@ -4,49 +4,89 @@
     <meta charset="UTF-8">
     <title>bottomup 환자 관리 시스템</title>
     <style>
-        body { font-family: 'Pretendard', sans-serif; background-color: #f4f7f6; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; }
-        .container { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; width: 100%; max-width: 800px; }
-        .logo { width: 220px; margin-bottom: 20px; }
-        h2 { color: #2c3e50; margin-bottom: 30px; letter-spacing: -1px; }
-        
-        /* 버튼 메뉴 */
-        .menu-btns { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; }
-        .btn { padding: 14px 28px; font-size: 16px; border: none; border-radius: 12px; cursor: pointer; font-weight: bold; transition: 0.3s; }
-        .btn-blue { background: #0052D4; color: white; }
-        .btn-orange { background: #ff9800; color: white; }
-        .btn:hover { transform: translateY(-2px); opacity: 0.9; }
+        /* 2000년대 초반 윈도우 클래식 배경색 (Teal) */
+        body { 
+            background-color: #008080; 
+            font-family: '돋움', dotum, sans-serif; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            margin: 0; 
+        }
 
-        /* 섹션 제어 */
-        .section { display: none; margin-top: 30px; text-align: left; animation: fadeIn 0.5s ease-out; }
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-        th, td { border-bottom: 1px solid #eee; padding: 15px; text-align: center; }
-        th { background-color: #f8f9fa; color: #555; }
+        /* 윈도우 창 느낌의 컨테이너 */
+        .container { 
+            background: #c0c0c0; /* 클래식 회색 */
+            padding: 20px; 
+            border: 3px solid;
+            border-color: #fff #808080 #808080 #fff; /* 입체감 있는 테두리 */
+            width: 90%; 
+            max-width: 700px; 
+        }
+
+        .logo { width: 200px; margin-bottom: 10px; }
         
+        /* 윈도우 타이틀 바 느낌 */
+        .title-bar {
+            background: linear-gradient(90deg, #000080, #1084d0);
+            color: white;
+            padding: 5px 10px;
+            text-align: left;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        h2 { color: #000; font-size: 20px; margin-bottom: 20px; }
+
+        /* 레트로 버튼 스타일 */
+        .btn-group { margin-bottom: 20px; }
+        .btn { 
+            padding: 8px 20px; 
+            background: #c0c0c0; 
+            border: 2px solid;
+            border-color: #fff #808080 #808080 #fff;
+            cursor: pointer; 
+            font-weight: bold;
+            margin: 5px;
+        }
+        .btn:active {
+            border-color: #808080 #fff #fff #808080;
+        }
+
+        /* 테이블 스타일 */
+        .section { display: none; background: white; border: 2px inset #fff; padding: 15px; margin-top: 10px; }
+        table { width: 100%; border-collapse: collapse; background: white; }
+        th { background: #dfdfdf; border: 1px solid #808080; padding: 8px; font-size: 14px; }
+        td { border: 1px solid #808080; padding: 8px; text-align: center; font-size: 13px; }
+
         /* 입력 폼 */
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: #444; }
-        .form-group input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
-        .save-btn { width: 100%; padding: 15px; background: #28a745; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; font-weight: bold; }
-
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        input { border: 2px inset #fff; padding: 5px; width: 80%; margin-bottom: 10px; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <img src="team-logo.png" alt="bottomup 로고" class="logo">
-    <h2>환자 정보 관리 시스템</h2>
+    <div class="title-bar">
+        <span>Patient_Manager.exe</span>
+        <span>[?][X]</span>
+    </div>
 
-    <div class="menu-btns">
-        <button class="btn btn-blue" onclick="toggleSection('view')">환자 목록 조회</button>
-        <button class="btn btn-orange" onclick="toggleSection('add')">신규 환자 등록</button>
+    <img src="team-logo.png" alt="bottomup 로고" class="logo">
+    <h2>환자 정보 관리 시스템 v1.0</h2>
+
+    <div class="btn-group">
+        <button class="btn" onclick="toggleSection('view')">조회(V)</button>
+        <button class="btn" onclick="toggleSection('add')">등록(A)</button>
     </div>
 
     <div id="section-view" class="section">
-        <h3 style="color: #0052D4; border-left: 5px solid #0052D4; padding-left: 10px;">📋 현재 등록된 환자 명단</h3>
+        <h4 style="margin-top:0;">[ 환자 명단 ]</h4>
         <table>
             <thead>
-                <tr><th>순번</th><th>성함</th><th>주민등록번호</th><th>연락처</th></tr>
+                <tr><th>ID</th><th>이름</th><th>주민번호</th><th>연락처</th></tr>
             </thead>
             <tbody>
                 <tr><td>1</td><td>김바다</td><td>990101-1234567</td><td>010-1234-5678</td></tr>
@@ -57,20 +97,11 @@
     </div>
 
     <div id="section-add" class="section">
-        <h3 style="color: #ff9800; border-left: 5px solid #ff9800; padding-left: 10px;">➕ 신규 환자 정보 입력</h3>
-        <div class="form-group">
-            <label>환자 성함</label>
-            <input type="text" placeholder="이름을 입력하세요">
-        </div>
-        <div class="form-group">
-            <label>주민등록번호</label>
-            <input type="text" placeholder="000000-0000000">
-        </div>
-        <div class="form-group">
-            <label>연락처</label>
-            <input type="text" placeholder="010-0000-0000">
-        </div>
-        <button class="save-btn" onclick="alert('정보가 전송되었습니다. 자바 콘솔을 확인하세요!')">DB에 저장하기</button>
+        <h4 style="margin-top:0;">[ 신규 등록 ]</h4>
+        이름: <input type="text"><br>
+        주민: <input type="text"><br>
+        번호: <input type="text"><br>
+        <button class="btn" onclick="alert('저장되었습니다.')">확인</button>
     </div>
 </div>
 
