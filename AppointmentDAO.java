@@ -13,7 +13,7 @@ public class AppointmentDAO {
     }
 
 
-     // [기능 1] 예약 등록
+     // [기능 1번] 예약 등록
 
     public void register(String pName, String phone, String dName, String appDate) {
         if (appDate.length() == 16) appDate += ":00";
