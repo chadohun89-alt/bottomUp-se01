@@ -1,4 +1,19 @@
- // [기능 1] 예약 등록
+package app;
+
+import java.sql.*;
+
+public class AppointmentDAO {
+
+    private static final String URL = "jdbc:mysql://codevlab.kr:3306/bottomup2?serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true&useSSL=false";
+    private static final String USER = "bottomup2";
+    private static final String PASS = "bottomup22";
+
+    private Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(URL, USER, PASS);
+    }
+
+
+     // [기능 1] 예약 등록
 
     public void register(String pName, String phone, String dName, String appDate) {
         if (appDate.length() == 16) appDate += ":00";
@@ -61,3 +76,4 @@
         pstmt.executeUpdate();
         System.out.println("["+pName+"]님, ["+dName+"] 의사에게 예약이 완료되었습니다.");
     }
+}

@@ -1,3 +1,5 @@
+package app;
+
 public class AppointmentDTO {
     private int appId;
     private int patientId;
