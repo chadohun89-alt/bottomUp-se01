@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>bottomup 환자 관리 시스템</title>
+    <style>
+        body { font-family: 'Pretendard', sans-serif; background-color: #f4f7f6; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; }
+        .container { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; width: 100%; max-width: 800px; }
+        .logo { width: 220px; margin-bottom: 20px; }
+        h2 { color: #2c3e50; margin-bottom: 30px; letter-spacing: -1px; }
+        
+        /* 버튼 메뉴 */
+        .menu-btns { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; }
+        .btn { padding: 14px 28px; font-size: 16px; border: none; border-radius: 12px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        .btn-blue { background: #0052D4; color: white; }
+        .btn-orange { background: #ff9800; color: white; }
+        .btn:hover { transform: translateY(-2px); opacity: 0.9; }
+
+        /* 섹션 제어 */
+        .section { display: none; margin-top: 30px; text-align: left; animation: fadeIn 0.5s ease-out; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border-bottom: 1px solid #eee; padding: 15px; text-align: center; }
+        th { background-color: #f8f9fa; color: #555; }
+        
+        /* 입력 폼 */
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: #444; }
+        .form-group input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
+        .save-btn { width: 100%; padding: 15px; background: #28a745; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; font-weight: bold; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="team-logo.png" alt="bottomup 로고" class="logo">
+    <h2>환자 정보 관리 시스템</h2>
+
+    <div class="menu-btns">
+        <button class="btn btn-blue" onclick="toggleSection('view')">환자 목록 조회</button>
+        <button class="btn btn-orange" onclick="toggleSection('add')">신규 환자 등록</button>
+    </div>
+
+    <div id="section-view" class="section">
+        <h3 style="color: #0052D4; border-left: 5px solid #0052D4; padding-left: 10px;">📋 현재 등록된 환자 명단</h3>
+        <table>
+            <thead>
+                <tr><th>순번</th><th>성함</th><th>주민등록번호</th><th>연락처</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>김바다</td><td>990101-1234567</td><td>010-1234-5678</td></tr>
+                <tr><td>2</td><td>김새나</td><td>001101-7654321</td><td>010-9876-5432</td></tr>
+                <tr><td>3</td><td>조차장</td><td>980505-1234567</td><td>010-1234-7890</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="section-add" class="section">
+        <h3 style="color: #ff9800; border-left: 5px solid #ff9800; padding-left: 10px;">➕ 신규 환자 정보 입력</h3>
+        <div class="form-group">
+            <label>환자 성함</label>
+            <input type="text" placeholder="이름을 입력하세요">
+        </div>
+        <div class="form-group">
+            <label>주민등록번호</label>
+            <input type="text" placeholder="000000-0000000">
+        </div>
+        <div class="form-group">
+            <label>연락처</label>
+            <input type="text" placeholder="010-0000-0000">
+        </div>
+        <button class="save-btn" onclick="alert('정보가 전송되었습니다. 자바 콘솔을 확인하세요!')">DB에 저장하기</button>
+    </div>
+</div>
+
+<script>
+    function toggleSection(type) {
+        document.getElementById('section-view').style.display = type === 'view' ? 'block' : 'none';
+        document.getElementById('section-add').style.display = type === 'add' ? 'block' : 'none';
+    }
+</script>
+
+</body>
+</html>
