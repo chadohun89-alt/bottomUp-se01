@@ -1,0 +1,40 @@
+/* 상태바 푸터 */
+.status-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #c0c0c0;
+    display: flex;
+    padding: 1px;
+    border-top: 2px solid #fff;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.status-cell {
+    border: 1px solid;
+    border-color: #808080 #fff #fff #808080; /* 입체감 효과 */
+    padding: 3px 10px;
+    font-size: 11px;
+    margin-right: 2px;
+    color: #000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 셀 비율 조정 (알림 영역 7 : 정보 영역 3) */
+.status-cell:nth-child(1) { 
+    flex: 7; 
+} 
+
+.status-cell:nth-child(2) { 
+    flex: 3; 
+    text-align: right; 
+    margin-right: 0;
+}
+
+.status-cell:first-child { 
+    color: #cc0000; 
+    font-weight: bold; 
+}

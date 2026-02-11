@@ -1,0 +1,205 @@
+/* 2000년대 Retro OS 스타일 */
+body { 
+    font-family: 'Gulim', '굴림', sans-serif; 
+    background-color: #008080; 
+    display: flex; 
+    flex-direction: column; 
+    margin: 0; 
+    height: 100vh;
+}
+
+/* 헤더 및 메뉴바 */
+.main-header {
+    background: #c0c0c0;
+    border-bottom: 2px solid #808080;
+    width: 100%;
+}
+
+.menu-bar { 
+    display: flex; 
+    align-items: center; 
+    padding: 5px 12px; 
+}
+
+.hospital-logo-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-right: 5px;
+}
+
+.logo-box {
+    background-color: #ff0000; 
+    color: white;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #ffffff;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.5); 
+}
+
+.logo-name {
+    font-size: 16px;
+    font-weight: 900; 
+    color: #cc0000; 
+    letter-spacing: -0.5px;
+}
+
+.menu-separator {
+    width: 1px;
+    height: 20px;
+    background-color: #808080;
+    border-right: 1px solid #ffffff;
+    margin: 0 15px;
+}
+
+.menu-item { 
+    padding: 2px 10px; 
+    font-size: 13px; 
+    cursor: default; 
+    color: #000;          
+    text-decoration: none; 
+    display: inline-block; 
+}
+
+.menu-item:hover { 
+    background: #000080; 
+    color: white; 
+    text-decoration: none; 
+}
+
+.menu-item.active { 
+    font-weight: bold; 
+    color: #000; 
+    text-decoration: none; 
+}
+
+/* 윈도우 창 공통 스타일 */
+.container { 
+    display: flex; 
+    gap: 15px; 
+    padding: 20px;
+    flex: 1;
+    box-sizing: border-box;
+}
+
+.window { 
+    background: #c0c0c0; 
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    padding: 2px;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+.title-bar {
+    background: linear-gradient(90deg, #000080, #1084d0);
+    color: white;
+    padding: 3px 5px;
+    font-weight: bold;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-bar-controls button {
+    width: 16px; height: 14px;
+    background: #c0c0c0;
+    border: 1px solid;
+    border-color: #fff #808080 #808080 #fff;
+    font-size: 9px; padding: 0; margin-left: 2px;
+}
+
+.window-body { padding: 15px; }
+
+h2 { font-size: 14px; margin: 0 0 10px 0; }
+hr { border: 0; border-top: 1px solid #808080; border-bottom: 1px solid #fff; margin-bottom: 10px; }
+
+label { display: block; margin-top: 10px; font-size: 12px; }
+
+input, select { 
+    width: 100%; padding: 3px; margin-top: 2px;
+    border: 2px solid; border-color: #808080 #ffffff #ffffff #808080;
+    background: white; font-size: 12px; box-sizing: border-box;
+}
+
+.btn-submit { 
+    width: 100%; padding: 6px; background: #c0c0c0; 
+    border: 2px solid; border-color: #ffffff #808080 #808080 #ffffff;
+    cursor: pointer; margin-top: 15px; font-size: 12px; font-weight: bold;
+}
+
+.btn-submit:active { border-color: #808080 #ffffff #ffffff #808080; }
+
+/* 테이블 스타일 */
+
+.list-box {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+.table-container { 
+    background: white; 
+    border: 2px solid #808080;
+    height: 400px;
+    overflow-y: auto; 
+}
+
+table { width: 100%; border-collapse: collapse; }
+th { background: #c0c0c0; padding: 5px; font-size: 12px; border: 1px solid #808080; position: sticky; top: 0; }
+td { padding: 5px; border: 1px solid #dfdfdf; font-size: 12px; }
+
+/* 상태바 푸터 */
+.status-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #c0c0c0;
+    display: flex;
+    padding: 1px; /* 조금 더 얇게 수정 */
+    border-top: 2px solid #fff;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.status-cell {
+    border: 1px solid;
+    border-color: #808080 #fff #fff #808080; /* 입체감 */
+    padding: 3px 10px;
+    font-size: 11px;
+    margin-right: 2px;
+    color: #000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 셀 비율 조정 */
+.status-cell:nth-child(1) { 
+    flex: 7; /* 알림 텍스트 영역을 더 넓게 확장 */
+} 
+
+.status-cell:nth-child(2) { 
+    flex: 3; 
+    text-align: right; /* 오른쪽 정렬로 변경하여 관리자 정보 표시 */
+    margin-right: 0;
+}
+
+.status-cell:first-child { 
+    color: #cc0000; 
+    font-weight: bold; 
+}
+
+/* 상태 스타일 */
+.status { font-weight: bold; }
+.status[data-situation="예약"] { color: #0000ff; }
+.status[data-situation="취소"] { color: #ff0000; }
+.status[data-situation="진료완료"] { color: #008000; }
