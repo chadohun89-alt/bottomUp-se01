@@ -59,6 +59,7 @@ public class _Exec {
 			default:
 				System.out.println("- 프로그램 종료 -");
 				return;
+//				깃허브 테스트
 			}
 
 		}
