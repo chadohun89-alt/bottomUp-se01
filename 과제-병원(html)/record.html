@@ -10,7 +10,22 @@
 
 </head>
 <body>
+    <header class="main-header">
+    <div class="menu-bar">
+        <div class="hospital-logo-item">
+            <span class="logo-box">✚</span>
+            <span class="logo-name">BottomUP 병원</span>
+        </div>
+        
+        <div class="menu-separator"></div>
 
+        <a href="patient.html" class="menu-item">환자관리(P)</a>
+        <a href="doctor.html" class="menu-item">의사관리(D)</a>
+        <a href="Appointment.html" class="menu-item">예약관리(A)</a>
+        <a href="record.html" class="menu-item">진료기록관리(M)</a>
+    </div>
+</header>
+    <main class="container">
     <div class="search-container">
         <h3>🏥 환자 정보 조회</h3>
         
@@ -31,7 +46,25 @@
 
         <button onclick="searchPatient()">기록 검색하기</button>
     </div>
-
+    </main>
+<footer class="status-bar">
+    <div class="status-cell" id="status-text">
+        <span style="color: #000080;">●</span> 시스템 정상 동작 중
+    </div>
+    <div class="status-cell">
+        병원코드: BUP-001 | 관리자: Admin
+    </div>
+</footer>
+    
+<dialog id="resultModal">
+    <div class="modal-content">
+        <h2>🔍 진료 기록 결과</h2>
+        <div id="modalBody">
+            <!-- JS로 내용이 들어갈 자리 -->
+        </div>
+        <button onclick="closeModal()" class="close-btn">닫기</button>
+    </div>
+</dialog>
 
 </body>
 </html>
