@@ -1,9 +1,10 @@
 // 1. 데이터 관리 (기존과 동일)
 const patientNames = { 
-    "1": "김철수", 
-    "2": "이영희", 
-    "3": "박민수", 
-    "4": "최다인" };
+    "101": "김철수", 
+    "102": "이영희", 
+    "103": "박민수", 
+    "104": "최다인" 
+};
 
 const doctorNames = { 
     "1": "김이선 선생님 (내과)", 
@@ -13,7 +14,7 @@ const doctorNames = {
 };
 
 let virtualDB = [
-    { app_id: 1, patient_id: 1, doctor_id: 2, app_date: "2024-05-20 10:30", situation: "예약" }
+    { app_id: 1, patient_id: "101", doctor_id: "2", app_date: "2024-05-20 10:30", situation: "예약" }
 ];
 
 // 2. 화면 목록
@@ -87,3 +88,7 @@ function addAppointment() {
 window.onload = function() {
     renderTable();
 };
+
+function filterAppointments() {
+    renderTable();
+}
