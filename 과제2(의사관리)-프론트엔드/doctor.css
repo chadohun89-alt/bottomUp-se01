@@ -1,0 +1,94 @@
+/* 기본 세팅 & 공용 세팅 */
+#wrap{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 5px 10px;
+    
+    
+}
+
+
+
+/* 헤더 세팅 */
+header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    border-bottom: 1px solid black;
+    background-color: lightgray;
+}
+
+#headerBox{
+    padding: 0 30px;
+    
+}
+
+#containerUl{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+}
+
+#main{
+    position: relative;
+    width: 100%;
+    height: 1000px;
+    margin: 0 auto;
+    position: relative;
+    background-color: aquamarine;
+}
+
+
+/* 메인 세팅 */
+#mainContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: gray;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+#textTitle{
+    /* text-align: center; */
+}
+
+#table1{
+    width: 800px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#table1 th, td{
+    border: 1px solid black;
+}
+
+/* 푸터 세팅 */
+#footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid black;
+    background-color: lightgray;
+}
+
+#footerContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
