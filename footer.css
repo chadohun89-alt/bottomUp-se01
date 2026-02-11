@@ -1,50 +1,20 @@
-/* --- 메인 헤더 & 메뉴바 --- */
-.main-header {
+/* 푸터 전체 */
+.status-bar {
     background: #c0c0c0;
-    border-bottom: 2px solid #808080;
-    padding: 5px 10px;
+    border-top: 2px solid #fff;
+    display: flex;
+    padding: 2px;
 }
 
-.menu-bar {
-    display: flex; 
-    align-items: center; 
+/* 상태바 내부 칸 */
+.status-cell {
+    border: 1px solid;
+    border-color: #808080 #fff #fff #808080;
+    padding: 2px 10px;
+    font-size: 11px;
+    flex: 1; /* 칸 너비를 유연하게 채움 */
 }
 
-/* 로고 아이콘 (+) */
-.logo-box {
-    background: red; 
-    color: white; 
-    padding: 2px 6px;
-    font-weight: bold; 
-    border: 1px solid white; 
-    margin-right: 5px;
-}
-
-/* 병원 이름 */
-.logo-name { 
-    color: #cc0000; 
-    font-weight: bold; 
-    margin-right: 15px; 
-}
-
-/* 메뉴 사이 세로줄 */
-.menu-separator { 
-    width: 2px; 
-    height: 15px; 
-    background: #808080; 
-    margin: 0 10px; 
-}
-
-/* 개별 메뉴 글자 */
-.menu-item { 
-    color: black; 
-    text-decoration: none; 
-    font-size: 12px; 
-    margin-right: 10px; 
-}
-
-/* 메뉴에 마우스 올렸을 때 (선택사항) */
-.menu-item:hover {
-    background: #000080;
-    color: white;
-}
+/* 상태 텍스트 색상들 */
+.status-blue { color: blue; }
+.status-red { color: red; }

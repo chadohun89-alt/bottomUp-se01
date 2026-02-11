@@ -15,7 +15,7 @@ body {
     padding: 5px 10px;
 }
 
-.menu-bar {
+.menu-bar { 
     display: flex; 
     align-items: center; 
 }
@@ -32,13 +32,15 @@ body {
 .logo-name { 
     color: #cc0000; 
     font-weight: bold; 
-    margin-right: 15px; }
+    margin-right: 15px; 
+}
 
 .menu-separator { 
     width: 2px; 
     height: 15px; 
     background: #808080; 
-    margin: 0 10px; }
+    margin: 0 10px; 
+}
 
 .menu-item { 
     color: black; 
@@ -46,12 +48,45 @@ body {
     font-size: 12px; 
     margin-right: 10px; }
 
-/* 좌측 입력창 + 우측 리스트 */
+.menu-item:focus { 
+    font-weight: bold;
+    text-decoration: underline;
+    background-color: #000080; 
+    color: white;            
+    outline: none;            
+}
+
+.menu-check:checked + label .menu-item {
+    font-weight: bold;
+    text-decoration: underline;
+    color: blue;
+}
+
+/* 레이아웃 */
 .container { 
     display: flex; 
     padding: 20px; 
     gap: 15px; 
     flex: 1;
+    justify-content: center; 
+}
+
+/* [예약 등록.exe] */
+.container > .window:first-child { 
+    width: 350px; 
+    min-width: 350px;
+    max-width: 350px;
+    height: 500px;
+    flex: none; 
+}
+
+/* [예약 현황 목록] */
+.list-box {
+    width: 600px; 
+    min-width: 600px;
+    max-width: 600px;
+    height: 500px; 
+    flex: none; 
 }
 
 /* 윈도우 창 공통 */
@@ -110,7 +145,7 @@ input, select {
 .table-container { 
     background: white; 
     border: 2px solid #808080; 
-    height: 300px; 
+    height: 400px; 
     overflow-y: auto; 
 }
 
@@ -148,10 +183,5 @@ td {
     flex: 1;
 }
 
-.status-blue { 
-    color: blue; 
-}
-
-.status-red { 
-    color: red; 
-}
+.status-blue { color: blue; }
+.status-red { color: red; }
