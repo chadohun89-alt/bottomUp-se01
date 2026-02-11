@@ -1,51 +1,52 @@
-/* 헤더 전체 배경 및 테두리 */
 .main-header {
     background: #c0c0c0;
     border-bottom: 2px solid #808080;
-    padding: 5px 10px;
+    padding: 3px 10px;
 }
 
-/* 메뉴 항목 가로 정렬 */
-.menu-bar { 
+.menu-bar {
     display: flex; 
     align-items: center; 
 }
 
-/* 로고 빨간 박스 (+) */
+.hospital-logo-item {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
 .logo-box {
-    background: red; 
+    background: #cc0000; 
     color: white; 
-    padding: 2px 6px;
+    padding: 1px 5px;
     font-weight: bold; 
     border: 1px solid white; 
     margin-right: 5px;
+    font-size: 12px;
 }
 
-/* 병원 이름 */
 .logo-name { 
-    color: #cc0000; 
+    color: #000; 
     font-weight: bold; 
-    margin-right: 15px; 
+    font-size: 13px;
 }
 
-/* 메뉴 사이 세로선 */
 .menu-separator { 
     width: 2px; 
-    height: 15px; 
+    height: 18px; 
     background: #808080; 
+    border-right: 1px solid #fff;
     margin: 0 10px; 
 }
 
-/* 메뉴 글자 스타일 */
 .menu-item { 
     color: black; 
     text-decoration: none; 
     font-size: 12px; 
-    margin-right: 10px; 
+    padding: 2px 8px;
 }
 
-/* 활성화된 메뉴 강조 */
-.menu-item.active { 
-    font-weight: bold;
-    text-decoration: underline; 
+.menu-item:hover {
+    background: #000080;
+    color: white;
 }

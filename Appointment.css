@@ -12,33 +12,41 @@ body {
 .main-header {
     background: #c0c0c0;
     border-bottom: 2px solid #808080;
-    padding: 5px 10px;
+    padding: 3px 10px;
 }
 
-.menu-bar { 
+.menu-bar {
     display: flex; 
     align-items: center; 
 }
 
+.hospital-logo-item {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
 .logo-box {
-    background: red; 
+    background: #cc0000; 
     color: white; 
-    padding: 2px 6px;
+    padding: 1px 5px;
     font-weight: bold; 
     border: 1px solid white; 
     margin-right: 5px;
+    font-size: 12px;
 }
 
 .logo-name { 
-    color: #cc0000; 
+    color: #000; 
     font-weight: bold; 
-    margin-right: 15px; 
+    font-size: 13px;
 }
 
 .menu-separator { 
     width: 2px; 
-    height: 15px; 
+    height: 18px; 
     background: #808080; 
+    border-right: 1px solid #fff;
     margin: 0 10px; 
 }
 
@@ -46,20 +54,12 @@ body {
     color: black; 
     text-decoration: none; 
     font-size: 12px; 
-    margin-right: 10px; }
-
-.menu-item:focus { 
-    font-weight: bold;
-    text-decoration: underline;
-    background-color: #000080; 
-    color: white;            
-    outline: none;            
+    padding: 2px 8px;
 }
 
-.menu-check:checked + label .menu-item {
-    font-weight: bold;
-    text-decoration: underline;
-    color: blue;
+.menu-item:hover {
+    background: #000080;
+    color: white;
 }
 
 /* 레이아웃 */
