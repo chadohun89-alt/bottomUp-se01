@@ -118,6 +118,25 @@ body {
     padding: 15px; 
 }
 
+/* 검색 영역  */
+.search-wrapper {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.search-wrapper label {
+    margin-bottom: 0; 
+    white-space: nowrap;
+}
+
+#searchName {
+    margin-bottom: 0; 
+    padding: 2px 4px;
+    background-color: #fff;
+}
+
 /* 입력 요소 */
 label { 
     display: block; 

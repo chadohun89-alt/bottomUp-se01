@@ -44,7 +44,7 @@
     margin-right: 10px; 
 }
 
-/* 활성화된 메뉴 강조 (볼드/밑줄) */
+/* 활성화된 메뉴 강조 */
 .menu-item.active { 
     font-weight: bold;
     text-decoration: underline; 

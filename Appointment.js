@@ -1,4 +1,4 @@
-// 1. 데이터 관리 
+// 1. 데이터 관리 (기존과 동일)
 const patientNames = { 
     "1": "김철수", 
     "2": "이영희", 
@@ -21,33 +21,43 @@ function renderTable() {
     const tbody = document.getElementById('appointmentTable');
     if (!tbody) return;
 
-    tbody.innerHTML = "";
+    const searchText = document.getElementById('searchName') ? document.getElementById('searchName').value.toLowerCase() : "";
+    let totalHtml = "";
 
-    // for 반복문
     for (let i = 0; i < virtualDB.length; i++) {
         let row = virtualDB[i];
-        
-        // 환자, 의사 이름 찾기
         let pName = patientNames[row.patient_id];
         let dName = doctorNames[row.doctor_id];
 
-        //문자열
-        let htmlTag = "<tr>";
-        htmlTag += "<td style='text-align:center'>" + row.app_id + "</td>";
-        htmlTag += "<td>" + pName + " (#" + row.patient_id + ")</td>";
-        htmlTag += "<td>" + dName + "</td>";
-        htmlTag += "<td>" + row.app_date + "</td>";
-        htmlTag += "<td style='text-align:center'><span class='status'>" + row.situation + "</span></td>";
-        htmlTag += "</tr>";
+        // 검색어 필터링
+        if (pName.toLowerCase().indexOf(searchText) === -1) {
+            continue; 
+        }
 
-        // 테이블 추가
-        tbody.innerHTML = tbody.innerHTML + htmlTag;
+        // 클래스 부여
+        let statusClass = "";
+        if (row.situation === "예약") {
+            statusClass = "status-blue";
+        } else if (row.situation === "취소") {
+            statusClass = "status-red";
+        }
+
+        // HTML 조립
+        totalHtml += "<tr>";
+        totalHtml += "<td style='text-align:center'>" + row.app_id + "</td>";
+        totalHtml += "<td>" + pName + " (#" + row.patient_id + ")</td>";
+        totalHtml += "<td>" + dName + "</td>";
+        totalHtml += "<td>" + row.app_date.replace("T", " ") + "</td>"; // T 문자 제거
+        totalHtml += "<td style='text-align:center'><span class='" + statusClass + "'>" + row.situation + "</span></td>";
+        totalHtml += "</tr>";
     }
+    
+    // innerHTML 업데이트
+    tbody.innerHTML = totalHtml;
 }
 
 // 3. 예약 추가 
 function addAppointment() {
-    // 입력값 가져오기
     const pId = document.getElementById('patientSelect').value;
     const dId = document.getElementById('doctorSelect').value;
     const dateInput = document.getElementById('appDate').value;
@@ -59,9 +69,8 @@ function addAppointment() {
     }
 
     // 새로운 ID 생성
-    let newId = virtualDB.length + 1;
+    let newId = virtualDB.length > 0 ? virtualDB[virtualDB.length - 1].app_id + 1 : 1;
     
-    // 새로운 객체 생성
     let newRecord = {
         app_id: newId, 
         patient_id: pId, 
@@ -70,12 +79,8 @@ function addAppointment() {
         situation: sit
     };
 
-    // 배열에 추가
     virtualDB.push(newRecord);
-
     renderTable();
-    
-    // 알림 메시지
     alert("예약이 저장되었습니다.");
 }
 

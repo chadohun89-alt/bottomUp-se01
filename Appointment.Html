@@ -83,22 +83,28 @@
                 <button>X</button>
             </div>
         </div>
-        <div class="window-body">
-            <div class="table-container">
-                <table id="mainGrid">
-                    <thead>
-                        <tr>
-                            <th style="width: 50px; text-align: center;">ID</th>
-                            <th>환자성명</th>
-                            <th>담당의</th>
-                            <th>예약시간</th>
-                            <th style="width: 80px; text-align: center;">상태</th>
-                        </tr>
-                    </thead>
-                    <tbody id="appointmentTable"></tbody>
-                </table>
-            </div>
+
+    <div class="window-body">
+        <div class="search-box" style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+            <label for="searchName" style="margin: 0; white-space: nowrap;">환자명 검색:</label>
+            <input type="text" id="searchName" placeholder="이름을 입력하세요." onkeyup="filterAppointments()" style="flex: 1; padding: 4px;">
         </div>
+
+    <div class="table-container">
+        <table id="mainGrid">
+            <thead>
+                <tr>
+                    <th style="width: 50px; text-align: center;">ID</th>
+                    <th>환자성명</th>
+                    <th>담당의</th>
+                    <th>예약시간</th>
+                    <th style="width: 80px; text-align: center;">상태</th>
+                </tr>
+            </thead>
+            <tbody id="appointmentTable"></tbody>
+        </table>
+    </div>
+</div>
     </section>
 </main>
 
