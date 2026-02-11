@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>bottomup 환자 관리 시스템</title>
+    <style>
+        /* 2000년대 초반 윈도우 클래식 배경색 (Teal) */
+        body { 
+            background-color: #008080; 
+            font-family: '돋움', dotum, sans-serif; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            margin: 0; 
+        }
+
+        /* 윈도우 창 느낌의 컨테이너 */
+        .container { 
+            background: #c0c0c0; /* 클래식 회색 */
+            padding: 20px; 
+            border: 3px solid;
+            border-color: #fff #808080 #808080 #fff; /* 입체감 있는 테두리 */
+            width: 90%; 
+            max-width: 700px; 
+        }
+
+        .logo { width: 200px; margin-bottom: 10px; }
+        
+        /* 윈도우 타이틀 바 느낌 */
+        .title-bar {
+            background: linear-gradient(90deg, #000080, #1084d0);
+            color: white;
+            padding: 5px 10px;
+            text-align: left;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        h2 { color: #000; font-size: 20px; margin-bottom: 20px; }
+
+        /* 레트로 버튼 스타일 */
+        .btn-group { margin-bottom: 20px; }
+        .btn { 
+            padding: 8px 20px; 
+            background: #c0c0c0; 
+            border: 2px solid;
+            border-color: #fff #808080 #808080 #fff;
+            cursor: pointer; 
+            font-weight: bold;
+            margin: 5px;
+        }
+        .btn:active {
+            border-color: #808080 #fff #fff #808080;
+        }
+
+        /* 테이블 스타일 */
+        .section { display: none; background: white; border: 2px inset #fff; padding: 15px; margin-top: 10px; }
+        table { width: 100%; border-collapse: collapse; background: white; }
+        th { background: #dfdfdf; border: 1px solid #808080; padding: 8px; font-size: 14px; }
+        td { border: 1px solid #808080; padding: 8px; text-align: center; font-size: 13px; }
+
+        /* 입력 폼 */
+        input { border: 2px inset #fff; padding: 5px; width: 80%; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="title-bar">
+        <span>Patient_Manager.exe</span>
+        <span>[?][X]</span>
+    </div>
+
+    <img src="team-logo.png" alt="bottomup 로고" class="logo">
+    <h2>환자 정보 관리 시스템 v1.0</h2>
+
+    <div class="btn-group">
+        <button class="btn" onclick="toggleSection('view')">조회(V)</button>
+        <button class="btn" onclick="toggleSection('add')">등록(A)</button>
+    </div>
+
+    <div id="section-view" class="section">
+        <h4 style="margin-top:0;">[ 환자 명단 ]</h4>
+        <table>
+            <thead>
+                <tr><th>ID</th><th>이름</th><th>주민번호</th><th>연락처</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>김바다</td><td>990101-1234567</td><td>010-1234-5678</td></tr>
+                <tr><td>2</td><td>김새나</td><td>001101-7654321</td><td>010-9876-5432</td></tr>
+                <tr><td>3</td><td>조차장</td><td>980505-1234567</td><td>010-1234-7890</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="section-add" class="section">
+        <h4 style="margin-top:0;">[ 신규 등록 ]</h4>
+        이름: <input type="text"><br>
+        주민: <input type="text"><br>
+        번호: <input type="text"><br>
+        <button class="btn" onclick="alert('저장되었습니다.')">확인</button>
+    </div>
+</div>
+
+<script>
+    function toggleSection(type) {
+        document.getElementById('section-view').style.display = type === 'view' ? 'block' : 'none';
+        document.getElementById('section-add').style.display = type === 'add' ? 'block' : 'none';
+    }
+</script>
+
+</body>
+</html>
