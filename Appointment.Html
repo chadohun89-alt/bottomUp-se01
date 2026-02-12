@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BottomUP 병원 예약 관리 시스템 v1.0</title>
+    <link rel="stylesheet" href="Appointment.css">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="menu-bar">
+        <div class="hospital-logo-item">
+            <span class="logo-box">✚</span>
+            <span class="logo-name">BottomUP 병원</span>
+        </div>
+        
+        <div class="menu-separator"></div>
+
+        <div class="menu-bar">
+            <input type="radio" name="menu" id="m1" class="menu-check" hidden>
+            <label for="m1"><a href="./과제2(환자관리)-html/patient.html" class="menu-item">환자관리(P)</a></label>
+
+            <input type="radio" name="menu" id="m2" class="menu-check" hidden>
+            <label for="m2"><a href="./과제2(병원관리)-html/doctor.html" class="menu-item">의사관리(D)</a></label>
+
+            <input type="radio" name="menu" id="m3" class="menu-check" hidden>
+            <label for="m3"><a href="./Appointment.Html" class="menu-item">예약관리(A)</a></label>
+
+            <input type="radio" name="menu" id="m4" class="menu-check" hidden>
+            <label for="m4"><a href="./과제-병원(html)/record.html" class="menu-item">진료기록관리(M)</a></label>
+    </div>
+</header>
+
+<main class="container">
+    <section class="window" style="flex: 1; min-width: 320px; height: fit-content;">
+        <div class="title-bar">
+            <span>예약 등록.exe</span>
+            <div class="title-bar-controls">
+                <button>?</button>
+                <button>X</button>
+            </div>
+        </div>
+        <div class="window-body">
+            <h2>🏥 진료 예약 입력</h2>
+            <hr>
+            
+            <label for="patientSelect">환자명 선택(P)</label>
+            <select id="patientSelect">
+                <option value="101">김철수</option>
+                <option value="102">이영희</option>
+                <option value="103">박민수</option>
+                <option value="104">최다인</option>
+            </select>
+
+            <label for="doctorSelect">담당 의사 선택(D)</label>
+            <select id="doctorSelect">
+                <option value="1">김이선 선생님 (내과)</option>
+                <option value="2">이박선 선생님 (외과)</option>
+                <option value="3">박치달 선생님 (소아과)</option>
+                <option value="4">정후임 선생님 (피부과)</option>
+            </select>
+
+            <label for="appDate">예약 일시(T)</label>
+            <input type="datetime-local" id="appDate">
+
+            <label for="situation">진료 상태(S)</label>
+            <select id="situation">
+                <option value="예약">예약</option>
+                <option value="취소">취소</option>
+            </select>
+
+            <button class="btn-submit" onclick="addAppointment()">확인(O)</button>
+        </div>
+    </section>
+
+    <section class="window list-box">
+        <div class="title-bar">
+            <span>예약 현황 목록 - [실시간 업데이트]</span>
+            <div class="title-bar-controls">
+                <button>_</button>
+                <button>□</button>
+                <button>X</button>
+            </div>
+        </div>
+
+    <div class="window-body">
+        <div class="search-box" style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+            <label for="searchName" style="margin: 0; white-space: nowrap;">환자명 검색:</label>
+            <input type="text" id="searchName" placeholder="이름을 입력하세요" onkeyup="filterAppointments()" style="flex: 1; padding: 4px;">
+        </div>
+
+    <div class="table-container">
+        <table id="mainGrid">
+            <thead>
+                <tr>
+                    <th style="width: 50px; text-align: center;">ID</th>
+                    <th>환자성명</th>
+                    <th>담당의</th>
+                    <th>예약시간</th>
+                    <th style="width: 80px; text-align: center;">상태</th>
+                </tr>
+            </thead>
+            <tbody id="appointmentTable"></tbody>
+        </table>
+    </div>
+</div>
+    </section>
+</main>
+
+<footer class="status-bar">
+    <div class="status-cell" id="status-text">
+        <span style="color: #000080;">●</span> 시스템 정상 동작 중
+    </div>
+    <div class="status-cell">
+        병원코드: BUP-001 | 관리자: Admin
+    </div>
+</footer>
+
+<script src="Appointment.js"></script>
+</body>
+</html>
