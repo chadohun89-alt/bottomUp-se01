@@ -1,0 +1,52 @@
+.main-header {
+    background: #c0c0c0;
+    border-bottom: 2px solid #808080;
+    padding: 3px 10px;
+}
+
+.menu-bar {
+    display: flex; 
+    align-items: center; 
+}
+
+.hospital-logo-item {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.logo-box {
+    background: #cc0000; 
+    color: white; 
+    padding: 1px 5px;
+    font-weight: bold; 
+    border: 1px solid white; 
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+.logo-name { 
+    color: #000; 
+    font-weight: bold; 
+    font-size: 13px;
+}
+
+.menu-separator { 
+    width: 2px; 
+    height: 18px; 
+    background: #808080; 
+    border-right: 1px solid #fff;
+    margin: 0 10px; 
+}
+
+.menu-item { 
+    color: black; 
+    text-decoration: none; 
+    font-size: 12px; 
+    padding: 2px 8px;
+}
+
+.menu-item:hover {
+    background: #000080;
+    color: white;
+}
