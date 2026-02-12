@@ -5,7 +5,7 @@ public class patient {
     public static void main(String[] args) {
         // 접속 정보 (알려주신 정보 반영)
         String url = "jdbc:mysql://codevlab.kr:3306/bottomup2";
-        String user = "mitriver";
+        String user = "bottomup2";
         String password = "bottomup22";
         Scanner sc = new Scanner(System.in);
 
