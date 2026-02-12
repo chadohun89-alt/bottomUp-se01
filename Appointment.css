@@ -1,0 +1,206 @@
+/* 기본 배경 */
+body { 
+    background-color: #008080; 
+    font-family: '굴림', sans-serif; 
+    margin: 0; 
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 헤더 & 로고 */
+.main-header {
+    background: #c0c0c0;
+    border-bottom: 2px solid #808080;
+    padding: 3px 10px;
+}
+
+.menu-bar {
+    display: flex; 
+    align-items: center; 
+}
+
+.hospital-logo-item {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.logo-box {
+    background: #cc0000; 
+    color: white; 
+    padding: 1px 5px;
+    font-weight: bold; 
+    border: 1px solid white; 
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+.logo-name { 
+    color: #000; 
+    font-weight: bold; 
+    font-size: 13px;
+}
+
+.menu-separator { 
+    width: 2px; 
+    height: 18px; 
+    background: #808080; 
+    border-right: 1px solid #fff;
+    margin: 0 10px; 
+}
+
+.menu-item { 
+    color: black; 
+    text-decoration: none; 
+    font-size: 12px; 
+    padding: 2px 8px;
+}
+
+.menu-item:hover {
+    background: #000080;
+    color: white;
+}
+
+/* 레이아웃 */
+.container { 
+    display: flex; 
+    padding: 20px; 
+    gap: 15px; 
+    flex: 1;
+    justify-content: center; 
+}
+
+/* [예약 등록.exe] */
+.container > .window:first-child { 
+    width: 350px; 
+    min-width: 350px;
+    max-width: 350px;
+    height: 500px;
+    flex: none; 
+}
+
+/* [예약 현황 목록] */
+.list-box {
+    width: 600px; 
+    min-width: 600px;
+    max-width: 600px;
+    height: 500px; 
+    flex: none; 
+}
+
+/* 윈도우 창 공통 */
+.window { 
+    background: #c0c0c0; 
+    border: 2px solid;
+    border-color: #fff #808080 #808080 #fff; 
+    display: flex;
+    flex-direction: column;
+}
+
+.title-bar {
+    background: #000080; 
+    color: white; 
+    padding: 3px 5px; 
+    font-size: 12px; 
+    display: flex; 
+    justify-content: space-between;
+}
+
+.title-bar-controls button {
+    width: 16px; 
+    height: 14px; 
+    font-size: 9px; 
+    vertical-align: middle;
+}
+
+.window-body { 
+    padding: 15px; 
+}
+
+/* 검색 영역  */
+.search-wrapper {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.search-wrapper label {
+    margin-bottom: 0; 
+    white-space: nowrap;
+}
+
+#searchName {
+    margin-bottom: 0; 
+    padding: 2px 4px;
+    background-color: #fff;
+}
+
+/* 입력 요소 */
+label { 
+    display: block; 
+    font-size: 12px; 
+    margin-bottom: 3px; 
+}
+
+input, select { 
+    width: 100%; 
+    margin-bottom: 10px; 
+    border: 2px solid #808080; 
+}
+
+.btn-submit { 
+    width: 100%; 
+    padding: 5px; 
+    background: #c0c0c0; 
+    border: 2px solid; 
+    border-color: #fff #808080 #808080 #fff;
+    font-weight: bold; 
+    cursor: pointer;
+}
+
+/* 테이블 */
+.table-container { 
+    background: white; 
+    border: 2px solid #808080; 
+    height: 400px; 
+    overflow-y: auto; 
+}
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    font-size: 12px; 
+}
+
+th { 
+    background: #c0c0c0; 
+    border: 1px solid #808080; 
+    padding: 4px; 
+}
+
+td { 
+    border: 1px solid #dfdfdf; 
+    padding: 4px; 
+    text-align: center; 
+}
+
+/* 푸터 */
+.status-bar {
+    background: #c0c0c0;
+    border-top: 2px solid #fff;
+    display: flex;
+    padding: 2px;
+}
+
+.status-cell {
+    border: 1px solid;
+    border-color: #808080 #fff #fff #808080;
+    padding: 2px 10px;
+    font-size: 11px;
+    flex: 1;
+}
+
+.status-blue { color: blue; }
+.status-red { color: red; }
