@@ -1,4 +1,4 @@
-package hospital;
+//package hospital;
 
 public class DepartmentDTO {
 	

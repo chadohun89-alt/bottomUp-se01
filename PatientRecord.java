@@ -1,4 +1,3 @@
-package record;
 
 public class PatientRecord {
 	private String patientName, ssn, diagnosis, treatment, doctorName, regDate;
