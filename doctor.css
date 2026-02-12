@@ -5,6 +5,15 @@
     box-sizing: border-box;
 }
 
+body { 
+    background-color: #008080; 
+    font-family: '굴림', sans-serif; 
+    margin: 0; 
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 #wrap {
     width: 100%;
 }
@@ -14,7 +23,6 @@
     margin: 0 auto;
 }
 
-/* 2. 헤더 세팅 */
 .main-header {
     background: #c0c0c0;
     border-bottom: 2px solid #808080;
@@ -67,6 +75,7 @@
     background: #000080;
     color: white;
 }
+
 
 /* 3. 메인 세팅 */
 #main {
