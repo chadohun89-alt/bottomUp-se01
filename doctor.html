@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>의사정보관리</title>
+    <link rel="stylesheet" href="./doctor.css" />
+  </head>
+  <body>
+    <div id="wrap">
+      <!-- 헤더 -->
+      <header class="main-header">
+        <div class="menu-bar">
+        <div class="hospital-logo-item">
+            <span class="logo-box">✚</span>
+            <span class="logo-name">BottomUP 병원</span>
+        </div>
+        
+        <div class="menu-separator"></div>
+
+        <div class="menu-bar">
+            <input type="radio" name="menu" id="m1" class="menu-check" hidden>
+            <label for="m1"><a href="./patient.html" class="menu-item">환자관리(P)</a></label>
+
+            <input type="radio" name="menu" id="m2" class="menu-check" hidden>
+            <label for="m2"><a href="./doctor.html" class="menu-item">의사관리(D)</a></label>
+
+            <input type="radio" name="menu" id="m3" class="menu-check" hidden>
+            <label for="m3"><a href="./Appointment.Html" class="menu-item">예약관리(A)</a></label>
+
+            <input type="radio" name="menu" id="m4" class="menu-check" hidden>
+            <label for="m4"><a href="./record.html" class="menu-item">진료기록관리(M)</a></label>
+        </div>
+      </header>
+      <!-- 메인 -->
+      <main id="main">
+        <!-- 섹션1 정보 표 -->
+        <section class="window">
+          <!-- 
+            flex로 나열(번호, 이름, 진료과, 연락처, 입사일
+            -->
+          <div id="content" class="container">
+
+            <div class="title-bar">
+              <span>의사정보관리.exe</span>
+              <div class="title-bar-controls">
+                  <button>?</button>
+                  <button>X</button>
+              </div>
+            </div>   
+            
+            <div id="textTitleBox" class="container">
+              <h2>의사 정보 관리</h2>
+            </div>
+            <div id="tableBox">
+              <table id="table1">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>이름</th>
+                    <th>진료과</th>
+                    <th>연락처</th>
+                    <th>입사일</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>홍길동</td>
+                    <td>정형외과</td>
+                    <td>010-1111-1111</td>
+                    <td>1999-03-15</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>김갑순</td>
+                    <td>신경외과</td>
+                    <td>010-2222-2222</td>
+                    <td>2003-05-22</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>안경래</td>
+                    <td>내과</td>
+                    <td>010-3333-3333</td>
+                    <td>2010-05-5</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>동방삭</td>
+                    <td>신경과</td>
+                    <td>010-4444-4444</td>
+                    <td>2013-07-23</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>김사부</td>
+                    <td>소아과</td>
+                    <td>010-5555-5555</td>
+                    <td>2025-09-29</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div id="buttonContainer">
+              <div class="buttonBox">
+                <input id="등록" type="button" value="등록">
+              </div>
+              <div class="buttonBox">
+                <input id="수정" type="button" value="수정" >
+              </div>
+              <div class="buttonBox">
+                <input id="삭제" type="button" value="삭제">
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 섹션2 등록, 수정, 삭제 -->
+        <section></section>
+      </main>
+
+      <!-- 푸터 -->
+      <footer>
+        <div class="status-bar">
+          <div class="status-cell" id="status-text">
+            <span style="color: #000080">●</span> 시스템 정상 동작 중
+          </div>
+          <div class="status-cell">병원코드: BUP-001 | 관리자: Admin</div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<script>
+  
+  let enrollment = document.getElementById("등록");
+  enrollment.addEventListener("click", 등록);
+  function 등록(){
+    alert("준비중인 서비스입니다~!");
+  }
+
+  let change = document.getElementById("수정");
+  change.addEventListener("click", 수정);
+
+  function 수정(){
+    alert("준비중!");
+  }
+
+  let drop = document.getElementById("삭제");
+  drop.addEventListener("click", 삭제)
+  function 삭제(){
+    alert("준비중~~~~!!!")
+  }
+
+</script>

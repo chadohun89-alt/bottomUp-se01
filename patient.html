@@ -4,30 +4,91 @@
     <meta charset="UTF-8">
     <title>bottomup 환자 관리 시스템</title>
     <style>
-        /* 2000년대 초반 윈도우 클래식 배경색 (Teal) */
+        /* 1. 헤더 세팅 - 상단 고정 */
+        .main-header {
+            background: #c0c0c0;
+            border-bottom: 2px solid #808080;
+            padding: 3px 10px;
+            width: 100%;
+            position: fixed; /* 상단 고정 */
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .menu-bar {
+            display: flex; 
+            align-items: center; 
+        }
+
+        .hospital-logo-item {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+        }
+
+        .logo-box {
+            background: #cc0000; 
+            color: white; 
+            padding: 1px 5px;
+            font-weight: bold; 
+            border: 1px solid white; 
+            margin-right: 5px;
+            font-size: 12px;
+        }
+
+        .logo-name { 
+            color: #000; 
+            font-weight: bold; 
+            font-size: 13px;
+        }
+
+        .menu-separator { 
+            width: 2px; 
+            height: 18px; 
+            background: #808080; 
+            border-right: 1px solid #fff;
+            margin: 0 10px; 
+        }
+
+        .menu-item { 
+            color: black; 
+            text-decoration: none; 
+            font-size: 12px; 
+            padding: 2px 8px;
+        }
+
+        .menu-item:hover {
+            background: #000080;
+            color: white;
+        }
+
+        /* 2. 바디 세팅 */
         body { 
             background-color: #008080; 
             font-family: '돋움', dotum, sans-serif; 
             display: flex; 
-            justify-content: center; 
+            flex-direction: column; /* 세로 정렬 */
             align-items: center; 
             min-height: 100vh; 
             margin: 0; 
+            padding-top: 40px; /* 헤더 높이만큼 여백 */
         }
 
-        /* 윈도우 창 느낌의 컨테이너 */
+        /* 윈도우 창 컨테이너 */
         .container { 
-            background: #c0c0c0; /* 클래식 회색 */
+            background: #c0c0c0;
             padding: 20px; 
             border: 3px solid;
-            border-color: #fff #808080 #808080 #fff; /* 입체감 있는 테두리 */
+            border-color: #fff #808080 #808080 #fff;
             width: 90%; 
             max-width: 700px; 
+            margin-top: 50px; /* 화면 중앙 쪽으로 여백 */
+            margin-bottom: 50px;
         }
 
         .logo { width: 200px; margin-bottom: 10px; }
         
-        /* 윈도우 타이틀 바 느낌 */
         .title-bar {
             background: linear-gradient(90deg, #000080, #1084d0);
             color: white;
@@ -41,7 +102,6 @@
 
         h2 { color: #000; font-size: 20px; margin-bottom: 20px; }
 
-        /* 레트로 버튼 스타일 */
         .btn-group { margin-bottom: 20px; }
         .btn { 
             padding: 8px 20px; 
@@ -56,17 +116,53 @@
             border-color: #808080 #fff #fff #808080;
         }
 
-        /* 테이블 스타일 */
         .section { display: none; background: white; border: 2px inset #fff; padding: 15px; margin-top: 10px; }
         table { width: 100%; border-collapse: collapse; background: white; }
         th { background: #dfdfdf; border: 1px solid #808080; padding: 8px; font-size: 14px; }
         td { border: 1px solid #808080; padding: 8px; text-align: center; font-size: 13px; }
 
-        /* 입력 폼 */
         input { border: 2px inset #fff; padding: 5px; width: 80%; margin-bottom: 10px; }
+
+        /* 푸터 세팅 */
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .status-bar {
+            background: #c0c0c0;
+            border-top: 2px solid #fff;
+            display: flex;
+            padding: 2px;
+        }
+
+        .status-cell {
+            border: 1px solid;
+            border-color: #808080 #fff #fff #808080;
+            padding: 2px 10px;
+            font-size: 11px;
+            flex: 1;
+        }
     </style>
 </head>
 <body>
+
+<header class="main-header">
+    <div class="menu-bar">
+        <div class="hospital-logo-item">
+            <span class="logo-box">✚</span>
+            <span class="logo-name">BottomUP 병원</span>
+        </div>
+        
+        <div class="menu-separator"></div>
+
+        <a href="./patient.html" class="menu-item">환자관리(P)</a>
+        <a href="./doctor.html" class="menu-item">의사관리(D)</a>
+        <a href="./Appointment.Html" class="menu-item">예약관리(A)</a>
+        <a href="./record.html" class="menu-item">진료기록관리(M)</a>
+    </div>
+</header>
 
 <div class="container">
     <div class="title-bar">
@@ -104,6 +200,15 @@
         <button class="btn" onclick="alert('저장되었습니다.')">확인</button>
     </div>
 </div>
+
+<footer>
+    <div class="status-bar">
+        <div class="status-cell" id="status-text">
+            <span style="color: #000080">●</span> 시스템 정상 동작 중
+        </div>
+        <div class="status-cell">병원코드: BUP-001 | 관리자: Admin</div>
+    </div>
+</footer>
 
 <script>
     function toggleSection(type) {
