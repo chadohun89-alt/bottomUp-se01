@@ -1,7 +1,7 @@
 import java.sql.*;
 import java.util.Scanner;
 
-public class PatientManager {
+public class patient {
     public static void main(String[] args) {
         // 접속 정보 (알려주신 정보 반영)
         String url = "jdbc:mysql://codevlab.kr:3306/bottomup2";

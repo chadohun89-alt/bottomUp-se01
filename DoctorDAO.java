@@ -1,4 +1,4 @@
-package hospital;
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import hospital.DepartmentDTO;
-import hospital.DoctorDTO;
+//import DepartmentDTO;
+//import DoctorDTO;
 
 public class DoctorDAO {
 
