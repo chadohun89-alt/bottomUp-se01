@@ -1,12 +1,12 @@
-package hospital;
+//package hospital;
 
 import java.util.List;
 import java.util.Scanner;
 
-import hospital.DoctorDAO;
-import hospital.DoctorDTO;
+//import DoctorDAO;
+//import DoctorDTO;
 
-public class _Exec {
+public class _doctor_Exec {
 
 	public static void main(String[] args) {
 		// 의사 등록 기능 insert into

@@ -1,4 +1,4 @@
-package hospital;
+
 
 import java.sql.Date;
 import java.util.Scanner;
