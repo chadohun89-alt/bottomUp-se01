@@ -1,0 +1,20 @@
+/* 푸터 전체 */
+.status-bar {
+    background: #c0c0c0;
+    border-top: 2px solid #fff;
+    display: flex;
+    padding: 2px;
+}
+
+/* 상태바 내부 칸 */
+.status-cell {
+    border: 1px solid;
+    border-color: #808080 #fff #fff #808080;
+    padding: 2px 10px;
+    font-size: 11px;
+    flex: 1; /* 칸 너비를 유연하게 채움 */
+}
+
+/* 상태 텍스트 색상들 */
+.status-blue { color: blue; }
+.status-red { color: red; }
